@@ -1,142 +1,85 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/anki.css">
     <title>Japanese made easy</title>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap');
-.h1{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.h3{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.macfont{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 30px 0;
-}
-th, td {
-    border: 1px solid #aaa;
-    padding: 8px 12px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-}
-
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Highlight effect */
-.highlight {
-    background-color: yellow;
-    transition: background-color 1.5s ease;
-}
-a {
-    text-decoration: none;
-}
-.callout {
-    border-left: 4px solid #4caf50; /* Green accent */
-    background-color: #f9f9f9;
-    padding: 10px 15px;
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: system-ui, sans-serif;
-}
-.callout p {
-    margin: 0;
-    flex: 1;
-    padding-right: 10px;
-}
-.callout button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-.callout button:hover {
-    background-color: #45a049;
-}
-</style>
-</head>
-<body>
     
-    <div id="ankidecks" class="macfont"> 
-        <h3>Anki Decks</h3>
+   
+  </head>
+  <body>
+    <div id="ankidecks" class="macfont">
+      <h3>Anki Decks</h3>
     </div>
 
     <!-- Japanese Vocabulary Table -->
     <table>
+      <tbody>
         <tr>
-            <th>Deck Name</th>
-            <th>Purpose</th>
-            <th>Link</th>
+          <th>Deck Name</th>
+          <th>Purpose</th>
+          <th>Link</th>
         </tr>
         <tr>
-            <td>Core 2k/6k [Pitch Graphs, Optimized, Links] </td>
-            <td>Train your ears to listen (suspend all the reading cards)</td>
-            <td><a href="https://ankiweb.net/shared/info/1487314101">Ankiweb</a></td>
+          <td>Core 2k/6k [Pitch Graphs, Optimized, Links]</td>
+          <td>Train your ears to listen (suspend all the reading cards)</td>
+          <td>
+            <a href="https://ankiweb.net/shared/info/1487314101">Ankiweb</a>
+          </td>
         </tr>
         <tr>
-            <td>Wanikani</td>
-            <td>For recognizing kanji and radicals with mnemonics (make sure to choose one level and suspend others like firstly only use level 1 to 10)</td>
-            <td><a href="https://ankiweb.net/shared/info/369908962">Ankiweb</a></td>
+          <td>Wanikani</td>
+          <td>
+            For recognizing kanji and radicals with mnemonics (make sure to
+            choose one level and suspend others like firstly only use level 1 to
+            10)
+          </td>
+          <td>
+            <a href="https://ankiweb.net/shared/info/369908962">Ankiweb</a>
+          </td>
         </tr>
         <tr id="core10k">
-            <td>Ankidrone Core 10k</td>
-            <td>Use this to train your reading</td>
-            <td><a href=""></a></td>
+          <td>Ankidrone Core 10k</td>
+          <td>Use this to train your reading</td>
+          <td><a href=""></a></td>
         </tr>
         <tr>
-            <td>AnkiDrone Essentials</td>
-            <td>This deck is sorted by JLPT Levels (use this or 
-                <a href="#core10k" onclick="highlightSection('core10k')" class="core10k">Core10k</a>)
-            </td>
-            <td><a href="https://disk.yandex.com/d/adEb8n9uhOacHw">Ankidrone Foundation</a></td>
+          <td>AnkiDrone Essentials</td>
+          <td>
+            This deck is sorted by JLPT Levels (use this or
+            <a
+              href="#core10k"
+              onclick="highlightSection('core10k')"
+              class="core10k"
+              >Core10k</a
+            >)
+          </td>
+          <td>
+            <a href="https://disk.yandex.com/d/adEb8n9uhOacHw"
+              >Ankidrone Foundation</a
+            >
+          </td>
         </tr>
         <tr>
-            <td>Kanji Writing</td>
+          <td>Kanji Writing</td>
         </tr>
         <tr>
-            <td></td>
+          <td></td>
         </tr>
+      </tbody>
     </table>
 
-
     <div id="ankiaddons">
-        <h3>Anki Addons</h3>
-        <div class="callout">If you are done with installing the anki decks now it's time to install some addons to supercharge your learning
-            
-        </div>
-        <div class="callout">
-            <p id="callout-text"></p>
-            <button onclick="copyCallout()">Copy </button>
+      <h3>Anki Addons</h3>
+      <div class="callout">
+        If you are done with installing the anki decks now it's time to install
+        some addons to supercharge your learning
+      </div>
+      <div class="callout">
+        <p id="callout-text"></p>
+        <button onclick="copyCallout()">Copy</button>
+      </div>
+      <script src="javascript/anki.js"></script>
     </div>
-    <script>
-    function highlightSection(id) {
-        const section = document.getElementById(id);
-        section.classList.add('highlight');
-        setTimeout(() => {
-            section.classList.remove('highlight');
-        }, 1500);
-    }
-    function copyCallout() {
-    const text = document.getElementById("callout-text").innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard!");
-    });
-    </script>
-
-</body>
+  </body>
 </html>
